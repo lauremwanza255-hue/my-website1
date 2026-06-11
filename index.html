@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saffira Spice Co. — Whole Spices, Masalas & Single-Origin Blends</title>
+<meta name="description" content="Saffira Spice Co. sources, mills and blends single-origin spices and masalas. Retail tins and wholesale sacks, ground fresh to order." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --mahogany:#1a0a00;
+  --mahogany-2:#2a1305;
+  --chili:#c04a10;
+  --chili-dark:#9c3a0c;
+  --saffron:#f5c472;
+  --saffron-deep:#e9a94b;
+  --cream:#e8dcc8;
+  --cream-light:#f4ecdd;
+  --herb:#2d6a4f;
+  --herb-dark:#1f4d39;
+  --ink:#241405;
+  --muted:#6b5847;
+  --line:rgba(26,10,0,.12);
+  --shadow-sm:0 2px 10px rgba(26,10,0,.08);
+  --shadow:0 18px 50px rgba(26,10,0,.16);
+  --radius:14px;
+  --maxw:1240px;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--cream-light);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.1;font-weight:700;color:var(--mahogany)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section{padding:84px 0}
+.eyebrow{
+  font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--chili);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--chili);display:inline-block}
+.section-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin:14px 0 12px}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.92rem;
+  padding:14px 26px;border-radius:50px;transition:.28s cubic-bezier(.2,.7,.3,1);
+  letter-spacing:.01em;white-space:nowrap;
+}
+.btn-primary{background:var(--chili);color:#fff;box-shadow:0 10px 24px rgba(192,74,16,.32)}
+.btn-primary:hover{background:var(--chili-dark);transform:translateY(-3px);box-shadow:0 16px 32px rgba(192,74,16,.4)}
+.btn-dark{background:var(--mahogany);color:var(--saffron)}
+.btn-dark:hover{background:#000;transform:translateY(-3px)}
+.btn-ghost{border:1.5px solid currentColor;color:var(--mahogany)}
+.btn-ghost:hover{background:var(--mahogany);color:var(--saffron);border-color:var(--mahogany)}
+.btn-light{background:var(--saffron);color:var(--mahogany)}
+.btn-light:hover{background:#fff;transform:translateY(-3px)}
+
+/* spice "photography" — generated, zero external images */
+.spice-img{position:relative;overflow:hidden;background:#3a1e0c}
+.spice-img::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.18), transparent 38%),
+    radial-gradient(circle at 70% 70%, rgba(0,0,0,.4), transparent 55%),
+    var(--g,linear-gradient(135deg,#c04a10,#7a2e08));
+}
+.spice-img::after{
+  content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.5) 1px,transparent 1.6px),
+                   radial-gradient(rgba(0,0,0,.5) 1px,transparent 1.6px);
+  background-size:9px 9px,13px 13px;background-position:0 0,4px 6px;
+}
+.spice-label{position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--serif);
+  font-style:italic;color:#fff;font-size:.9rem;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+
+/* ============ TOP STRIP ============ */
+.topbar{background:var(--mahogany);color:var(--cream);font-size:.8rem}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;height:40px}
+.topbar a:hover{color:var(--saffron)}
+.topbar-right{display:flex;gap:20px;align-items:center}
+.topbar-right span{opacity:.85}
+
+/* ============ HEADER ============ */
+.header{position:sticky;top:0;z-index:90;background:rgba(244,236,221,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);transition:.3s}
+.header.shrink{box-shadow:var(--shadow-sm)}
+.header-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 24px;max-width:var(--maxw);margin:0 auto}
+.brand{grid-column:2;text-align:center;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:2px}
+.brand .mark{display:flex;align-items:center;gap:10px}
+.brand .logo-ico{width:34px;height:34px}
+.brand b{font-family:var(--serif);font-size:1.6rem;font-weight:800;letter-spacing:.01em;color:var(--mahogany);line-height:1}
+.brand small{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--chili);font-weight:600}
+.header-utils{grid-column:3;justify-self:end;display:flex;align-items:center;gap:6px}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--mahogany);transition:.2s;position:relative}
+.icon-btn:hover{background:rgba(192,74,16,.12);color:var(--chili)}
+.icon-btn svg{width:21px;height:21px}
+.currency{font-weight:600;font-size:.85rem;color:var(--mahogany);padding:8px 6px;display:flex;align-items:center;gap:4px}
+.cart-count{position:absolute;top:4px;right:4px;background:var(--chili);color:#fff;font-size:.62rem;font-weight:700;
+  width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-family:var(--sans)}
+.search-wrap{grid-column:1;justify-self:start;display:none}
+
+/* nav */
+.nav{border-top:1px solid var(--line);background:rgba(244,236,221,.6)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:center;align-items:center;gap:4px;flex-wrap:wrap}
+.nav-link{display:flex;align-items:center;gap:5px;padding:15px 16px;font-size:.86rem;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--ink);position:relative;transition:.2s}
+.nav-link:hover,.nav-link.active{color:var(--chili)}
+.nav-link::after{content:"";position:absolute;left:16px;right:16px;bottom:9px;height:2px;background:var(--chili);
+  transform:scaleX(0);transform-origin:left;transition:.28s}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
+.has-mega{position:static}
+.caret{width:9px;height:9px;transition:.25s}
+.has-mega:hover .caret{transform:rotate(180deg)}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;box-shadow:var(--shadow);border-top:2px solid var(--chili);
+  padding:34px 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:.26s;z-index:80}
+.has-mega:hover .mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-grid{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr) 1.3fr;gap:30px}
+.mega col{}
+.mega h5{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--chili);margin-bottom:14px;font-weight:700}
+.mega a{display:block;padding:7px 0;font-size:.9rem;color:var(--muted);transition:.18s}
+.mega a:hover{color:var(--chili);transform:translateX(4px)}
+.mega-feat{border-radius:12px;overflow:hidden;position:relative;min-height:200px;display:flex;align-items:flex-end;padding:20px}
+.mega-feat .txt{position:relative;z-index:2;color:#fff}
+.mega-feat .txt b{font-family:var(--serif);font-size:1.3rem;display:block}
+.mega-feat .txt span{font-size:.8rem;opacity:.9}
+
+/* hamburger */
+.burger{display:none;width:42px;height:42px;border-radius:50%;place-items:center;color:var(--mahogany)}
+.burger svg{width:24px;height:24px}
+
+/* ============ PAGES ============ */
+.page{display:none;animation:fade .5s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ============ HERO CAROUSEL ============ */
+.hero{position:relative;background:var(--mahogany);overflow:hidden}
+.slides{position:relative;height:min(82vh,680px)}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease;display:flex;align-items:center}
+.slide.on{opacity:1;visibility:visible}
+.slide-bg{position:absolute;inset:0}
+.slide-bg::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 28% 30%,rgba(255,255,255,.16),transparent 40%),var(--bg);}
+.slide-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(13,5,0,.82) 0%,rgba(13,5,0,.55) 42%,rgba(13,5,0,.15) 100%)}
+.slide-noise{position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.6) 1px,transparent 1.5px),radial-gradient(rgba(0,0,0,.6) 1px,transparent 1.5px);
+  background-size:10px 10px,15px 15px;background-position:0 0,5px 7px}
+.slide-content{position:relative;z-index:3;max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%}
+.slide-inner{max-width:600px;color:#fff}
+.slide-inner .promo-tag{display:inline-flex;align-items:center;gap:9px;background:rgba(245,196,114,.16);
+  border:1px solid rgba(245,196,114,.45);color:var(--saffron);padding:8px 16px;border-radius:50px;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+.slide-inner h1{font-size:clamp(2.4rem,6vw,4.6rem);color:#fff;line-height:1.02;margin-bottom:20px}
+.slide-inner h1 em{font-style:italic;color:var(--saffron)}
+.slide-inner p{font-size:1.12rem;opacity:.9;margin-bottom:14px;max-width:480px}
+.coupon{display:inline-block;font-family:var(--sans);font-weight:700;color:#fff;
+  border:1.5px dashed var(--saffron);border-radius:8px;padding:6px 14px;margin-bottom:26px;letter-spacing:.12em}
+.coupon b{color:var(--saffron)}
+.slide-cta{display:flex;gap:14px;flex-wrap:wrap}
+/* hero anim */
+.slide.on .anim{animation:rise .8s both}
+.slide.on .a1{animation-delay:.15s}.slide.on .a2{animation-delay:.3s}
+.slide.on .a3{animation-delay:.45s}.slide.on .a4{animation-delay:.6s}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:54px;height:54px;border-radius:50%;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;display:grid;place-items:center;
+  backdrop-filter:blur(4px);transition:.25s}
+.hero-arrow:hover{background:var(--chili);border-color:var(--chili)}
+.hero-arrow svg{width:22px;height:22px}
+.hero-arrow.prev{left:24px}.hero-arrow.next{right:24px}
+.hero-dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:10px}
+.hero-dots button{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.35);transition:.25s}
+.hero-dots button.on{background:var(--saffron);width:30px;border-radius:6px}
+
+/* ============ TRUST MINI BAR ============ */
+.mini-trust{background:var(--mahogany);color:var(--cream)}
+.mini-trust .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:22px 24px}
+.mini-trust div{display:flex;align-items:center;gap:12px;font-size:.9rem}
+.mini-trust svg{width:26px;height:26px;color:var(--saffron);flex-shrink:0}
+.mini-trust b{font-family:var(--serif);display:block;color:#fff;font-size:1rem}
+.mini-trust small{opacity:.75}
+
+/* ============ TABS / BEST PRODUCTS ============ */
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.tab{padding:11px 26px;border-radius:50px;font-weight:600;font-size:.9rem;color:var(--muted);
+  border:1.5px solid var(--line);transition:.22s}
+.tab.on,.tab:hover{background:var(--mahogany);color:var(--saffron);border-color:var(--mahogany)}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.tab-panel{display:none}.tab-panel.on{display:block}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:.32s cubic-bezier(.2,.7,.3,1);
+  border:1px solid rgba(26,10,0,.05);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.card-img{aspect-ratio:1/1;position:relative}
+.card-badge{position:absolute;top:12px;left:12px;z-index:3;background:var(--chili);color:#fff;font-size:.68rem;
+  font-weight:700;padding:5px 11px;border-radius:50px;letter-spacing:.05em;text-transform:uppercase}
+.card-fav{position:absolute;top:12px;right:12px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:grid;place-items:center;color:var(--mahogany);transition:.2s;opacity:0;transform:translateY(-6px)}
+.card:hover .card-fav{opacity:1;transform:none}
+.card-fav:hover{background:var(--chili);color:#fff}
+.card-fav svg{width:17px;height:17px}
+.card-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-cat{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--chili);font-weight:700}
+.card-body h3{font-size:1.18rem}
+.card-desc{font-size:.86rem;color:var(--muted);flex:1}
+.stars{color:var(--saffron-deep);font-size:.85rem;letter-spacing:2px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.price{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--mahogany)}
+.price s{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-weight:400;margin-left:6px}
+.add-btn{background:var(--cream);color:var(--mahogany);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:.2s}
+.add-btn:hover{background:var(--chili);color:#fff;transform:rotate(90deg)}
+.add-btn svg{width:18px;height:18px}
+
+/* ============ CATEGORY GRID ============ */
+.cat-band{background:var(--cream)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cat-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;display:flex;align-items:flex-end;
+  color:#fff;transition:.32s}
+.cat-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,5,0,.85),transparent 60%)}
+.cat-card:hover{transform:translateY(-6px)}
+.cat-info{position:relative;z-index:2;padding:24px;width:100%}
+.cat-info span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+.cat-info h3{color:#fff;font-size:1.5rem;margin:4px 0 10px}
+.cat-link{font-size:.82rem;font-weight:600;display:inline-flex;align-items:center;gap:7px;opacity:0;transform:translateY(8px);transition:.28s}
+.cat-card:hover .cat-link{opacity:1;transform:none}
+.cat-link svg{width:15px;height:15px}
+
+/* ============ PROMO BANNER (split) ============ */
+.promo-split{background:linear-gradient(120deg,var(--herb),var(--herb-dark));border-radius:20px;overflow:hidden;
+  display:grid;grid-template-columns:1.1fr 1fr;align-items:center;color:#fff;position:relative}
+.promo-split .txt{padding:60px}
+.promo-split .eyebrow{color:var(--saffron)}.promo-split .eyebrow::before{background:var(--saffron)}
+.promo-split h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.8rem);margin:14px 0 14px}
+.promo-split p{opacity:.9;margin-bottom:26px;max-width:420px}
+.promo-art{position:relative;min-height:340px;align-self:stretch}
+.promo-off{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;text-align:center;color:#fff}
+.promo-off b{font-family:var(--serif);font-size:5rem;line-height:.9;display:block;color:var(--saffron)}
+.promo-off span{letter-spacing:.3em;text-transform:uppercase;font-size:.85rem}
+
+/* ============ FULLWIDTH 50% HERO ============ */
+.fw-hero{position:relative;color:#fff;text-align:center;overflow:hidden}
+.fw-bg{position:absolute;inset:0;background:linear-gradient(135deg,#6b1f06,#1a0a00)}
+.fw-bg::after{content:"";position:absolute;inset:0;opacity:.3;mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.6) 1px,transparent 1.5px);background-size:11px 11px}
+.fw-inner{position:relative;z-index:2;padding:110px 24px;max-width:760px;margin:0 auto}
+.fw-inner .eyebrow{color:var(--saffron);justify-content:center}.fw-inner .eyebrow::before{background:var(--saffron)}
+.fw-inner h2{color:#fff;font-size:clamp(2.2rem,5vw,4rem);margin:16px 0 14px}
+.fw-inner h2 em{color:var(--saffron);font-style:italic}
+.fw-inner p{opacity:.88;font-size:1.1rem;margin-bottom:30px}
+
+/* ============ MOSAIC GALLERY ============ */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
+.mtile{border-radius:14px;overflow:hidden;position:relative;cursor:pointer}
+.mtile::after{content:"";position:absolute;inset:0;background:rgba(26,10,0,.18);opacity:0;transition:.3s}
+.mtile:hover::after{opacity:1}
+.mtile .spice-label{opacity:0;transition:.3s;z-index:3}
+.mtile:hover .spice-label{opacity:1}
+.mtile.big{grid-column:span 2;grid-row:span 2}
+.mtile.wide{grid-column:span 2}
+
+/* ============ BLOG CAROUSEL ============ */
+.blog-track-wrap{overflow:hidden}
+.blog-track{display:flex;gap:26px;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.blog-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+  flex:0 0 calc((100% - 52px)/3);transition:.3s}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.blog-img{aspect-ratio:16/10;position:relative}
+.blog-date{position:absolute;bottom:12px;left:12px;z-index:3;background:var(--saffron);color:var(--mahogany);
+  font-weight:700;border-radius:9px;padding:7px 12px;text-align:center;font-family:var(--serif);line-height:1}
+.blog-date b{font-size:1.3rem;display:block}.blog-date span{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase}
+.blog-body{padding:24px}
+.blog-meta{display:flex;gap:16px;font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.blog-meta span{display:flex;align-items:center;gap:5px}
+.blog-meta svg{width:14px;height:14px;color:var(--chili)}
+.blog-body h3{font-size:1.25rem;margin-bottom:10px;transition:.2s}
+.blog-card:hover h3{color:var(--chili)}
+.blog-body p{font-size:.88rem;color:var(--muted);margin-bottom:14px}
+.read-more{font-weight:600;font-size:.85rem;color:var(--chili);display:inline-flex;align-items:center;gap:7px}
+.read-more svg{width:15px;height:15px;transition:.2s}
+.read-more:hover svg{transform:translateX(4px)}
+.carousel-nav{display:flex;justify-content:center;gap:12px;margin-top:36px}
+.carousel-nav button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);color:var(--mahogany);
+  display:grid;place-items:center;transition:.22s}
+.carousel-nav button:hover{background:var(--chili);color:#fff;border-color:var(--chili)}
+.carousel-nav svg{width:20px;height:20px}
+
+/* ============ TEAM ============ */
+.team-band{background:var(--cream)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.team-card{text-align:center}
+.team-photo{width:170px;height:170px;border-radius:50%;margin:0 auto 20px;position:relative;
+  border:5px solid #fff;box-shadow:var(--shadow-sm);overflow:hidden;transition:.3s}
+.team-card:hover .team-photo{transform:translateY(-6px);box-shadow:var(--shadow)}
+.team-card h3{font-size:1.2rem}
+.team-card .role{color:var(--chili);font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:3px 0 12px}
+.team-card p{font-size:.85rem;color:var(--muted);max-width:240px;margin:0 auto 14px}
+.team-social{display:flex;justify-content:center;gap:10px}
+.team-social a{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--mahogany);transition:.2s}
+.team-social a:hover{background:var(--chili);color:#fff;transform:translateY(-3px)}
+.team-social svg{width:15px;height:15px}
+
+/* ============ TRUST ICONS ============ */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.trust-card{text-align:center;padding:20px}
+.trust-ico{width:84px;height:84px;border-radius:50%;background:var(--chili);display:grid;place-items:center;
+  margin:0 auto 22px;color:#fff;box-shadow:0 14px 30px rgba(192,74,16,.3);transition:.3s}
+.trust-card:hover .trust-ico{transform:translateY(-6px) rotate(-6deg)}
+.trust-ico svg{width:38px;height:38px}
+.trust-card h3{font-size:1.3rem;margin-bottom:8px}
+.trust-card p{color:var(--muted);font-size:.92rem;max-width:300px;margin:0 auto}
+
+/* ============ NEWSLETTER ============ */
+.news{background:linear-gradient(120deg,var(--mahogany),var(--mahogany-2));border-radius:22px;padding:64px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.news h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:12px}
+.news h2 em{color:var(--saffron);font-style:italic}
+.news p{opacity:.85;max-width:440px;margin:0 auto 26px}
+.news-form{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap}
+.news-form input{flex:1;min-width:200px;padding:15px 22px;border-radius:50px;border:none;font-family:inherit;font-size:.95rem}
+.news-form input:focus{outline:3px solid var(--saffron)}
+
+/* ============ PAGE HEADER (inner pages) ============ */
+.page-hero{background:linear-gradient(120deg,var(--mahogany),#3a1808);color:#fff;text-align:center;padding:80px 24px;position:relative;overflow:hidden}
+.page-hero::after{content:"";position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.7) 1px,transparent 1.5px);background-size:12px 12px}
+.page-hero .inner{position:relative;z-index:2}
+.page-hero h1{color:#fff;font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:12px}
+.crumbs{font-size:.85rem;opacity:.8;display:flex;gap:8px;justify-content:center}
+.crumbs a:hover{color:var(--saffron)}
+
+/* ============ SHOP ============ */
+.shop-layout{display:grid;grid-template-columns:260px 1fr;gap:40px}
+.filters{position:sticky;top:170px;align-self:start}
+.filter-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.filter-block h4{font-size:1rem;margin-bottom:14px;font-family:var(--sans);font-weight:700;letter-spacing:.04em}
+.filter-list button{display:flex;justify-content:space-between;width:100%;padding:8px 0;font-size:.9rem;color:var(--muted);transition:.18s;text-align:left}
+.filter-list button:hover,.filter-list button.on{color:var(--chili);font-weight:600;padding-left:6px}
+.filter-list button span{background:var(--cream);border-radius:20px;padding:1px 9px;font-size:.72rem}
+.shop-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;flex-wrap:wrap;gap:14px}
+.shop-bar p{color:var(--muted);font-size:.9rem}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sort-sel{padding:11px 18px;border-radius:10px;border:1.5px solid var(--line);font-family:inherit;font-size:.88rem;background:#fff;color:var(--ink)}
+
+/* ============ ABOUT ============ */
+.about-story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{border-radius:20px;overflow:hidden;aspect-ratio:4/5;position:relative}
+.about-story h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin:14px 0 18px}
+.about-story p{color:var(--muted);margin-bottom:16px}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat b{font-family:var(--serif);font-size:2.8rem;color:var(--chili);display:block;line-height:1}
+.stat span{font-size:.82rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cert{background:#fff;border-radius:14px;padding:30px;text-align:center;box-shadow:var(--shadow-sm)}
+.cert .badge{width:64px;height:64px;border-radius:50%;background:var(--cream);display:grid;place-items:center;margin:0 auto 16px;color:var(--herb)}
+.cert .badge svg{width:30px;height:30px}
+.cert h4{font-family:var(--sans);font-size:1rem;margin-bottom:6px}
+.cert p{font-size:.82rem;color:var(--muted)}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.value-card{background:#fff;border-radius:16px;padding:36px;box-shadow:var(--shadow-sm);border-top:3px solid var(--chili)}
+.value-card .num{font-family:var(--serif);font-size:2.4rem;color:var(--saffron-deep);font-weight:800;line-height:1}
+.value-card h3{font-size:1.3rem;margin:8px 0 10px}
+.value-card p{color:var(--muted);font-size:.92rem}
+
+/* ============ BLOG PAGE ============ */
+.blog-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.blog-feature{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:50px}
+.blog-feature .img{min-height:380px;position:relative}
+.blog-feature .txt{padding:50px}
+.blog-feature h2{font-size:clamp(1.6rem,3vw,2.4rem);margin:14px 0 16px}
+.blog-feature p{color:var(--muted);margin-bottom:22px}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px}
+.contact-info{display:flex;flex-direction:column;gap:22px}
+.info-card{display:flex;gap:18px;align-items:flex-start;background:#fff;padding:24px;border-radius:14px;box-shadow:var(--shadow-sm)}
+.info-card .ico{width:50px;height:50px;border-radius:12px;background:var(--cream);display:grid;place-items:center;color:var(--chili);flex-shrink:0}
+.info-card .ico svg{width:23px;height:23px}
+.info-card h4{font-family:var(--sans);font-size:1rem;margin-bottom:4px}
+.info-card p{color:var(--muted);font-size:.9rem}
+.form-card{background:#fff;padding:44px;border-radius:20px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:7px;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:inherit;font-size:.92rem;background:var(--cream-light);color:var(--ink);transition:.2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--chili);background:#fff}
+.field textarea{resize:vertical;min-height:130px}
+.map-embed{border-radius:20px;overflow:hidden;height:380px;margin-top:50px;position:relative;background:var(--cream)}
+.map-fake{position:absolute;inset:0;background:
+  linear-gradient(45deg,transparent 48%,rgba(45,106,79,.2) 49% 51%,transparent 52%),
+  linear-gradient(-45deg,transparent 48%,rgba(192,74,16,.15) 49% 51%,transparent 52%),
+  repeating-linear-gradient(0deg,rgba(26,10,0,.05) 0 1px,transparent 1px 40px),
+  repeating-linear-gradient(90deg,rgba(26,10,0,.05) 0 1px,transparent 1px 40px),var(--cream)}
+.map-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);z-index:2;color:var(--chili)}
+.map-pin svg{width:48px;height:48px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.3))}
+
+/* ============ WHOLESALE ============ */
+.b2b-hero{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.b2b-hero h2{font-size:clamp(2rem,4vw,3rem);margin:14px 0 18px}
+.b2b-hero p{color:var(--muted);margin-bottom:16px}
+.b2b-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.b2b-feat{text-align:center;padding:34px 24px;background:#fff;border-radius:16px;box-shadow:var(--shadow-sm)}
+.b2b-feat .ico{width:70px;height:70px;border-radius:50%;background:var(--herb);color:#fff;display:grid;place-items:center;margin:0 auto 18px}
+.b2b-feat .ico svg{width:32px;height:32px}
+.b2b-feat h3{font-size:1.2rem;margin-bottom:8px}
+.b2b-feat p{color:var(--muted);font-size:.9rem}
+.price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.price-table th{background:var(--mahogany);color:var(--saffron);padding:18px 24px;text-align:left;font-family:var(--sans);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+.price-table td{padding:18px 24px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--ink)}
+.price-table tr:hover td{background:var(--cream-light)}
+.price-table td:last-child{font-weight:700;color:var(--chili)}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--mahogany);color:var(--cream);padding-top:70px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.4fr;gap:36px;padding-bottom:50px}
+.footer h5{font-family:var(--sans);color:#fff;font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.footer a{display:block;padding:7px 0;font-size:.9rem;opacity:.8;transition:.2s}
+.footer a:hover{opacity:1;color:var(--saffron);padding-left:5px}
+.footer-about .mark{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-about b{font-family:var(--serif);font-size:1.5rem;color:#fff}
+.footer-about p{opacity:.8;font-size:.9rem;margin-bottom:20px;max-width:300px}
+.f-contact li{display:flex;gap:12px;padding:8px 0;font-size:.9rem;opacity:.85;align-items:flex-start}
+.f-contact svg{width:18px;height:18px;color:var(--saffron);flex-shrink:0;margin-top:3px}
+.socials{display:flex;gap:12px;margin-top:8px}
+.socials a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;padding:0;opacity:1}
+.socials a:hover{background:var(--chili);transform:translateY(-3px)}
+.socials svg{width:18px;height:18px;color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-bottom p{font-size:.84rem;opacity:.7}
+.pay-icons{display:flex;gap:10px}
+.pay-icons span{background:#fff;border-radius:6px;padding:5px 8px;font-size:.62rem;font-weight:800;color:var(--mahogany);letter-spacing:.02em;font-family:var(--sans)}
+
+/* ============ COOKIE / BACK TO TOP ============ */
+.cookie{position:fixed;left:24px;right:24px;bottom:24px;z-index:120;background:#fff;border-radius:16px;box-shadow:var(--shadow);
+  padding:22px 28px;display:flex;align-items:center;gap:24px;max-width:920px;margin:0 auto;border:1px solid var(--line);
+  transition:.4s;transform:translateY(0)}
+.cookie.hide{transform:translateY(200%);opacity:0;pointer-events:none}
+.cookie p{font-size:.88rem;color:var(--muted);flex:1}
+.cookie b{color:var(--mahogany)}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cookie-btns button{padding:11px 22px;border-radius:50px;font-weight:600;font-size:.85rem}
+.cookie-accept{background:var(--chili);color:#fff}
+.cookie-decline{background:var(--cream);color:var(--mahogany)}
+.to-top{position:fixed;right:24px;bottom:24px;z-index:110;width:50px;height:50px;border-radius:50%;background:var(--mahogany);
+  color:var(--saffron);display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;transform:translateY(20px) scale(.8);
+  pointer-events:none;transition:.3s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--chili);color:#fff}
+.to-top svg{width:22px;height:22px}
+
+/* drawer (mobile nav + cart + search) */
+.overlay{position:fixed;inset:0;background:rgba(26,10,0,.5);z-index:130;opacity:0;visibility:hidden;transition:.3s}
+.overlay.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,86vw);background:var(--cream-light);z-index:140;
+  transform:translateX(100%);transition:.35s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:24px;border-bottom:1px solid var(--line)}
+.drawer-head h3{font-size:1.3rem}
+.drawer-body{padding:24px;overflow-y:auto;flex:1}
+.drawer-nav a{display:block;padding:15px 0;font-family:var(--serif);font-size:1.3rem;border-bottom:1px solid var(--line);color:var(--mahogany)}
+.drawer-nav a:hover{color:var(--chili);padding-left:8px}
+.cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.cart-item .ci-img{width:62px;height:62px;border-radius:10px;flex-shrink:0}
+.cart-item h4{font-family:var(--sans);font-size:.92rem}
+.cart-item small{color:var(--muted)}
+.cart-item .ci-price{margin-left:auto;font-weight:700;color:var(--chili);font-family:var(--serif)}
+.search-form{display:flex;gap:10px}
+.search-form input{flex:1;padding:14px 18px;border-radius:10px;border:1.5px solid var(--line);font-family:inherit}
+
+/* toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);z-index:200;background:var(--herb);
+  color:#fff;padding:14px 26px;border-radius:50px;font-weight:600;font-size:.9rem;box-shadow:var(--shadow);transition:.4s;display:flex;gap:10px;align-items:center}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast svg{width:18px;height:18px}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1080px){
+  .product-grid,.cat-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+  .shop-grid,.blog-page-grid{grid-template-columns:repeat(2,1fr)}
+  .mega-grid{grid-template-columns:repeat(3,1fr)}
+  .mega-feat{display:none}
+}
+@media(max-width:880px){
+  .nav{display:none}
+  .burger{display:grid}
+  .header-top{grid-template-columns:auto 1fr auto;padding:14px 18px}
+  .brand{grid-column:2}
+  .burger{order:-1}
+  .blog-card{flex:0 0 calc((100% - 26px)/2)}
+  .promo-split,.about-story,.contact-grid,.b2b-hero,.blog-feature{grid-template-columns:1fr}
+  .promo-art{min-height:240px}
+  .shop-layout{grid-template-columns:1fr}
+  .filters{position:static;display:none}
+  .stat-row,.cert-grid,.b2b-feats{grid-template-columns:repeat(2,1fr)}
+  .trust-grid,.value-grid{grid-template-columns:1fr}
+  .mini-trust div{flex:1 1 40%}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .news{padding:44px 24px}
+}
+@media(max-width:560px){
+  .section{padding:56px 0}
+  .product-grid,.cat-grid,.team-grid,.shop-grid,.blog-page-grid{grid-template-columns:1fr}
+  .mega{display:none}
+  .blog-card{flex:0 0 100%}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .mtile.big{grid-column:span 2;grid-row:span 1}
+  .stat-row,.cert-grid,.b2b-feats,.footer-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .cookie{flex-direction:column;text-align:center}
+  .slide-inner h1{font-size:2.2rem}
+  .topbar-right span:not(:last-child){display:none}
+  .promo-split .txt,.blog-feature .txt,.form-card{padding:32px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP STRIP ============ -->
+<div class="topbar">
+  <div class="container">
+    <span>🌶️ Free shipping on retail orders over $59 — milled fresh, shipped within 24 hours</span>
+    <div class="topbar-right">
+      <span>Help Center</span>
+      <a href="#" data-nav="wholesale">Wholesale Login</a>
+      <span>Track Order</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="header-top">
+    <button class="burger" id="burger" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a href="#" class="brand" data-nav="home" aria-label="Saffira Spice Co. home">
+      <span class="mark">
+        <svg class="logo-ico" viewBox="0 0 40 40" fill="none"><path d="M20 3c-5 6-9 11-9 17a9 9 0 0 0 18 0c0-6-4-11-9-17Z" fill="#c04a10"/><path d="M20 9c-3 4-5 7-5 11a5 5 0 0 0 10 0c0-4-2-7-5-11Z" fill="#f5c472"/></svg>
+        <b>Saffira</b>
+      </span>
+      <small>Spice Co.</small>
+    </a>
+    <div class="header-utils">
+      <button class="icon-btn" id="openSearch" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <button class="currency" aria-label="Currency">
+        USD <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <button class="icon-btn" id="openCart" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">3</span>
+      </button>
+      <button class="icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-link active" data-nav="home">Home</a>
+      <div class="nav-link has-mega" data-nav="shop">Gourmet Foods
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        <div class="mega">
+          <div class="mega-grid">
+            <div>
+              <h5>Whole Spices</h5>
+              <a href="#" data-nav="shop">Green Cardamom</a>
+              <a href="#" data-nav="shop">Cumin Seeds</a>
+              <a href="#" data-nav="shop">Coriander Seeds</a>
+              <a href="#" data-nav="shop">Black Pepper</a>
+              <a href="#" data-nav="shop">Mustard Seeds</a>
+            </div>
+            <div>
+              <h5>Ground & Powders</h5>
+              <a href="#" data-nav="shop">Turmeric Powder</a>
+              <a href="#" data-nav="shop">Cinnamon</a>
+              <a href="#" data-nav="shop">Nutmeg</a>
+              <a href="#" data-nav="shop">Clove</a>
+            </div>
+            <div>
+              <h5>Signature Masalas</h5>
+              <a href="#" data-nav="shop">Garam Masala</a>
+              <a href="#" data-nav="shop">Spicy Masalas</a>
+              <a href="#" data-nav="shop">Herbs Masalas</a>
+              <a href="#" data-nav="shop">Dried Seeds</a>
+            </div>
+            <div>
+              <h5>Pantry</h5>
+              <a href="#" data-nav="shop">Cooking Oils</a>
+              <a href="#" data-nav="shop">Beverages</a>
+              <a href="#" data-nav="shop">Gift Tins</a>
+              <a href="#" data-nav="wholesale">Bulk Sacks</a>
+            </div>
+            <div class="mega-feat spice-img" style="--g:linear-gradient(135deg,#e9a94b,#9c3a0c)">
+              <div class="txt"><b>Harvest Boxes</b><span>Curated single-origin trios</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="nav-link" data-nav="shop">Shop</a>
+      <a href="#" class="nav-link" data-nav="shop">Grocery</a>
+      <a href="#" class="nav-link" data-nav="shop">Cooking Oil</a>
+      <a href="#" class="nav-link" data-nav="shop">Beverages</a>
+      <div class="nav-link has-mega">Pages
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        <div class="mega">
+          <div class="mega-grid">
+            <div>
+              <h5>Company</h5>
+              <a href="#" data-nav="about">About Us</a>
+              <a href="#" data-nav="about">Our Sourcing</a>
+              <a href="#" data-nav="about">Certifications</a>
+            </div>
+            <div>
+              <h5>Read</h5>
+              <a href="#" data-nav="blog">Blog & Recipes</a>
+              <a href="#" data-nav="blog">Spice Guides</a>
+            </div>
+            <div>
+              <h5>Trade</h5>
+              <a href="#" data-nav="wholesale">Wholesale / B2B</a>
+              <a href="#" data-nav="wholesale">Bulk Pricing</a>
+            </div>
+            <div>
+              <h5>Connect</h5>
+              <a href="#" data-nav="contact">Contact</a>
+              <a href="#" data-nav="contact">Find a Stockist</a>
+            </div>
+            <div class="mega-feat spice-img" style="--g:linear-gradient(135deg,#2d6a4f,#1a0a00)">
+              <div class="txt"><b>Our Story</b><span>From farm gate to your kitchen</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== HOME ====================================================== -->
+<section class="page active" id="page-home">
+
+  <!-- HERO CAROUSEL -->
+  <div class="hero">
+    <div class="slides" id="slides">
+      <div class="slide on">
+        <div class="slide-bg" style="--bg:linear-gradient(120deg,#3a1808,#6b1f06)"></div>
+        <div class="slide-noise"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <span class="promo-tag anim a1">★ Festival of Flavour</span>
+          <h1 class="anim a2">Herbs & Spices, <em>milled fresh</em> for your kitchen</h1>
+          <p class="anim a3">Single-origin spices roasted in small batches and ground to order — never sitting on a shelf losing their soul.</p>
+          <div class="coupon anim a3">Flat <b>10% OFF</b> — use coupon <b>SPI18</b></div>
+          <div class="slide-cta anim a4">
+            <a href="#" class="btn btn-light" data-nav="shop">Shop the Harvest</a>
+            <a href="#" class="btn btn-ghost" style="color:#fff" data-nav="about">Our Story</a>
+          </div>
+        </div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg" style="--bg:linear-gradient(120deg,#1f4d39,#0d2b1f)"></div>
+        <div class="slide-noise"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <span class="promo-tag anim a1">Direct Trade</span>
+          <h1 class="anim a2">From the <em>highland farms</em> to your spice tin</h1>
+          <p class="anim a3">We buy whole spices straight from growers in Kerala, Zanzibar and Guatemala — fair prices, full traceability, peak aroma.</p>
+          <div class="slide-cta anim a4">
+            <a href="#" class="btn btn-light" data-nav="about">Meet the Growers</a>
+            <a href="#" class="btn btn-ghost" style="color:#fff" data-nav="shop">Browse Origins</a>
+          </div>
+        </div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg" style="--bg:linear-gradient(120deg,#6b1f06,#1a0a00)"></div>
+        <div class="slide-noise"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <span class="promo-tag anim a1">Wholesale & B2B</span>
+          <h1 class="anim a2">Bulk masalas for <em>kitchens that mean business</em></h1>
+          <p class="anim a3">Restaurants, delis and private labels trust Saffira for consistent, lab-tested spice blends by the sack.</p>
+          <div class="slide-cta anim a4">
+            <a href="#" class="btn btn-light" data-nav="wholesale">Request Trade Pricing</a>
+            <a href="#" class="btn btn-ghost" style="color:#fff" data-nav="contact">Talk to Us</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="hero-arrow next" id="heroNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+    <div class="hero-dots" id="heroDots"></div>
+  </div>
+
+  <!-- MINI TRUST -->
+  <div class="mini-trust">
+    <div class="container">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13v10H3zM16 10h4l1 3v4h-5"/><circle cx="6.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg><span><b>Free Shipping</b><small>On orders over $59</small></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v5h5"/><path d="M12 7v5l3 3"/></svg><span><b>Money-Back Guarantee</b><small>30-day freshness promise</small></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.5"/></svg><span><b>Full Traceability</b><small>Know your farmer</small></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg><span><b>24/7 Support</b><small>Spice advice, anytime</small></span></div>
+    </div>
+  </div>
+
+  <!-- BEST PRODUCTS + TABS -->
+  <div class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Bestsellers this season</span>
+        <h2>Our Most-Loved Spices</h2>
+        <p>The jars our customers reorder again and again — graded, cleaned and ground in small lots for maximum aroma.</p>
+      </div>
+      <div class="tabs" id="bestTabs">
+        <button class="tab on" data-panel="seeds">Dried Seeds</button>
+        <button class="tab" data-panel="masalas">Spicy Masalas</button>
+      </div>
+      <div class="tab-panel on" id="panel-seeds"><div class="product-grid" id="grid-seeds"></div></div>
+      <div class="tab-panel" id="panel-masalas"><div class="product-grid" id="grid-masalas"></div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORY GRID -->
+  <div class="section cat-band">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Shop by spice</span>
+        <h2>Explore the Pantry</h2>
+        <p>From sweet to smoky to fiery — every category starts with whole spices selected at the source.</p>
+      </div>
+      <div class="cat-grid">
+        <a href="#" class="cat-card spice-img" data-nav="shop" style="--g:linear-gradient(160deg,#2d6a4f,#143a2a)">
+          <div class="cat-info"><span>Sweet & Aromatic</span><h3>Cardamom</h3><span class="cat-link">Shop now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="#" class="cat-card spice-img" data-nav="shop" style="--g:linear-gradient(160deg,#a8702c,#5a3410)">
+          <div class="cat-info"><span>Warm & Earthy</span><h3>Cumin Seeds</h3><span class="cat-link">Shop now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="#" class="cat-card spice-img" data-nav="shop" style="--g:linear-gradient(160deg,#b88a3e,#6e4a18)">
+          <div class="cat-info"><span>Citrus & Floral</span><h3>Coriander</h3><span class="cat-link">Shop now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="#" class="cat-card spice-img" data-nav="shop" style="--g:linear-gradient(160deg,#8a4a22,#3a1c0a)">
+          <div class="cat-info"><span>Sweet & Woody</span><h3>Nutmeg</h3><span class="cat-link">Shop now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMO SPLIT 20% -->
+  <div class="section">
+    <div class="container">
+      <div class="promo-split">
+        <div class="txt">
+          <span class="eyebrow">Limited time</span>
+          <h2>20% off selected single-origin spices</h2>
+          <p>Stock the shelf with our hand-picked harvest selection — Tellicherry pepper, Lakadong turmeric and Alleppey cardamom, all at a sweeter price through the season.</p>
+          <a href="#" class="btn btn-light" data-nav="shop">Claim the Offer</a>
+        </div>
+        <div class="promo-art spice-img" style="--g:linear-gradient(135deg,#e9a94b,#9c3a0c)">
+          <div class="promo-off"><b>20%</b><span>Off Selected</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULLWIDTH 50% HERO -->
+  <div class="fw-hero">
+    <div class="fw-bg"></div>
+    <div class="fw-inner">
+      <span class="eyebrow">Pantry refresh event</span>
+      <h2>Cardamom · Clove · Cumin — <em>up to 50% OFF</em></h2>
+      <p>Three kitchen workhorses, freshly milled and bundled together. While the harvest lasts — when it's gone, it's gone until next season.</p>
+      <a href="#" class="btn btn-primary" data-nav="shop">Shop the Bundle</a>
+    </div>
+  </div>
+
+  <!-- MOSAIC GALLERY -->
+  <div class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Inside the spice house</span>
+        <h2>A Feast for the Senses</h2>
+        <p>Colour, texture and aroma — a glimpse of the spices that pass through our mill each week.</p>
+      </div>
+      <div class="mosaic">
+        <div class="mtile big spice-img" style="--g:linear-gradient(135deg,#c04a10,#6b1f06)"><span class="spice-label">Chili threads, sun-dried</span></div>
+        <div class="mtile spice-img" style="--g:linear-gradient(135deg,#e9a94b,#a8702c)"><span class="spice-label">Lakadong turmeric</span></div>
+        <div class="mtile spice-img" style="--g:linear-gradient(135deg,#2d6a4f,#143a2a)"><span class="spice-label">Green cardamom pods</span></div>
+        <div class="mtile wide spice-img" style="--g:linear-gradient(135deg,#8a4a22,#3a1c0a)"><span class="spice-label">Cinnamon quills, Ceylon</span></div>
+        <div class="mtile spice-img" style="--g:linear-gradient(135deg,#b88a3e,#6e4a18)"><span class="spice-label">Coriander seed</span></div>
+        <div class="mtile spice-img" style="--g:linear-gradient(135deg,#9c3a0c,#4a1604)"><span class="spice-label">Smoked paprika</span></div>
+        <div class="mtile spice-img" style="--g:linear-gradient(135deg,#5a3410,#2a1505)"><span class="spice-label">Whole cloves</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG CAROUSEL -->
+  <div class="section cat-band">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">From the journal</span>
+        <h2>Recipes & Spice Guides</h2>
+        <p>Cooking notes, origin stories and the little techniques that make spices sing.</p>
+      </div>
+      <div class="blog-track-wrap">
+        <div class="blog-track" id="blogTrack"></div>
+      </div>
+      <div class="carousel-nav">
+        <button id="blogPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button id="blogNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREMIUM QUALITY GRID -->
+  <div class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Premium selection</span>
+        <h2>Quality You Can Taste</h2>
+        <p>Our top-shelf spices — rare grades, protected origins and limited harvests for the serious cook.</p>
+      </div>
+      <div class="product-grid" id="grid-premium"></div>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="section team-band">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The people behind the pestle</span>
+        <h2>Meet Our Spice Team</h2>
+        <p>Buyers, blenders and roasters who've spent their lives learning what great spice smells like.</p>
+      </div>
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </div>
+
+  <!-- TRUST ICONS -->
+  <div class="section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a9 9 0 1 0 9 9"/><path d="m21 4-9 9-3-3"/></svg></div>
+          <h3>Money-Back Guarantee</h3>
+          <p>If your spice doesn't arrive vivid and fragrant, we'll refund it within 30 days — no questions, no fuss.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13v10H3zM16 10h4l1 3v4h-5"/><circle cx="6.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg></div>
+          <h3>Free Shipping</h3>
+          <p>Complimentary carbon-neutral delivery on every retail order over $59, packed in resealable, light-proof pouches.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div>
+          <h3>24/7 Customer Service</h3>
+          <p>Real cooks on the other end of the line — ask us about substitutions, dosage or which masala suits your dish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="section" style="padding-top:0">
+    <div class="container">
+      <div class="news">
+        <h2>Get a pinch of <em>inspiration</em> weekly</h2>
+        <p>Recipes, harvest news and subscriber-only offers. Join 24,000 home cooks — and get 10% off your first order.</p>
+        <form class="news-form" onsubmit="return showToast('Welcome to the table! Check your inbox for 10% off.')">
+          <input type="email" placeholder="Your email address" required aria-label="Email" />
+          <button class="btn btn-light" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== SHOP ====================================================== -->
+<section class="page" id="page-shop">
+  <div class="page-hero">
+    <div class="inner">
+      <h1>The Spice Shop</h1>
+      <div class="crumbs"><a href="#" data-nav="home">Home</a> / <span>Shop</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="shop-layout">
+        <aside class="filters" id="filters">
+          <div class="filter-block">
+            <h4>Categories</h4>
+            <div class="filter-list" id="catFilter"></div>
+          </div>
+          <div class="filter-block">
+            <h4>Price</h4>
+            <div class="filter-list">
+              <button>Under $10 <span>14</span></button>
+              <button>$10 – $20 <span>22</span></button>
+              <button>$20 – $40 <span>9</span></button>
+              <button>Premium $40+ <span>5</span></button>
+            </div>
+          </div>
+          <div class="filter-block" style="border:none">
+            <h4>Origin</h4>
+            <div class="filter-list">
+              <button>India <span>18</span></button>
+              <button>Sri Lanka <span>6</span></button>
+              <button>Zanzibar <span>4</span></button>
+              <button>Guatemala <span>3</span></button>
+            </div>
+          </div>
+        </aside>
+        <div>
+          <div class="shop-bar">
+            <p id="shopCount">Showing all products</p>
+            <select class="sort-sel" aria-label="Sort">
+              <option>Sort: Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest Harvest</option>
+              <option>Best Rated</option>
+            </select>
+          </div>
+          <div class="shop-grid" id="shopGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== ABOUT ====================================================== -->
+<section class="page" id="page-about">
+  <div class="page-hero">
+    <div class="inner">
+      <h1>Our Story</h1>
+      <div class="crumbs"><a href="#" data-nav="home">Home</a> / <span>About Us</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="about-story">
+        <div class="about-img spice-img" style="--g:linear-gradient(150deg,#c04a10,#3a1808)"><span class="spice-label">The Saffira mill, est. 1998</span></div>
+        <div>
+          <span class="eyebrow">Since 1998</span>
+          <h2>A spice house built on one stubborn belief</h2>
+          <p>Saffira began at a single market stall in the old quarter, where our founder Anaya Rao refused to sell anything she hadn't smelled, crushed and tasted herself. Three decades later, that stubbornness is still the whole business model.</p>
+          <p>We buy whole spices — never pre-ground — directly from the farmers who grow them. Tellicherry peppercorns from the Malabar coast. Cardamom from the misty Idukki hills. Cloves from Pemba island. Each lot is cleaned, graded, gently roasted and milled to order, so the jar that reaches you is alive with oils that supermarket spice lost months ago.</p>
+          <p>No fillers. No anti-caking agents. No spice older than its last harvest. Just the real, fragrant thing — the way your grandmother's kitchen smelled.</p>
+          <a href="#" class="btn btn-primary" data-nav="contact">Visit the Mill</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section cat-band">
+    <div class="container">
+      <div class="stat-row">
+        <div class="stat"><b>26+</b><span>Years milling</span></div>
+        <div class="stat"><b>140</b><span>Partner farms</span></div>
+        <div class="stat"><b>15</b><span>Origin countries</span></div>
+        <div class="stat"><b>24k</b><span>Happy kitchens</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How we work</span>
+        <h2>From Farm Gate to Your Kitchen</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-card"><div class="num">01</div><h3>Sourced Direct</h3><p>We skip the auction houses and buy whole spices straight from growers, paying above fair-trade rates for top grades and lasting relationships.</p></div>
+        <div class="value-card"><div class="num">02</div><h3>Milled Fresh</h3><p>Spices are roasted and ground in small batches the week they ship — because a ground spice starts dying the moment it's cut.</p></div>
+        <div class="value-card"><div class="num">03</div><h3>Lab Tested</h3><p>Every batch is tested for purity, moisture and oil content, then sealed in light-proof, resealable pouches to lock the aroma in.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section cat-band">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trusted & certified</span>
+        <h2>Certifications We Stand By</h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert"><div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><h4>USDA Organic</h4><p>Certified organic spices from inspected farms.</p></div>
+        <div class="cert"><div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9h4a2 2 0 0 1 0 4H9"/></svg></div><h4>Fair Trade</h4><p>Guaranteed fair pricing for every grower.</p></div>
+        <div class="cert"><div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"/><path d="M8 12h8M12 8v8"/></svg></div><h4>ISO 22000</h4><p>Audited food-safety management system.</p></div>
+        <div class="cert"><div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h4>Non-GMO</h4><p>Verified non-GMO, no irradiation, ever.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">The crew</span><h2>The People Behind the Pestle</h2></div>
+      <div class="team-grid" id="teamGrid2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== BLOG ====================================================== -->
+<section class="page" id="page-blog">
+  <div class="page-hero">
+    <div class="inner">
+      <h1>Journal & Recipes</h1>
+      <div class="crumbs"><a href="#" data-nav="home">Home</a> / <span>Blog</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <article class="blog-feature">
+        <div class="img spice-img" style="--g:linear-gradient(140deg,#c04a10,#6b1f06)"><span class="card-badge" style="position:absolute;top:18px;left:18px">Featured</span></div>
+        <div class="txt">
+          <div class="blog-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg> Anaya Rao</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> June 4, 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg> 18 comments</span>
+          </div>
+          <h2>How to Bloom Your Spices (and Why It Changes Everything)</h2>
+          <p>Toasting whole cumin and coriander in hot oil for thirty seconds unlocks aromatic compounds that stay locked in a cold pan. Here's the technique that separates a flat curry from one that fills the house — plus the three spices you should never bloom.</p>
+          <a href="#" class="read-more">Read the guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <div class="blog-page-grid" id="blogPageGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== CONTACT ====================================================== -->
+<section class="page" id="page-contact">
+  <div class="page-hero">
+    <div class="inner">
+      <h1>Get in Touch</h1>
+      <div class="crumbs"><a href="#" data-nav="home">Home</a> / <span>Contact</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">We'd love to hear from you</span>
+          <h2 style="font-size:2rem;margin:6px 0 6px">Questions, orders or just spice talk</h2>
+          <p style="color:var(--muted);margin-bottom:6px">Whether you need a substitution tip or a pallet of garam masala, our team answers fast.</p>
+          <div class="info-card">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div><h4>Visit the Mill</h4><p>11244 Niki Lauda 455, New Zealand</p></div>
+          </div>
+          <div class="info-card">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+            <div><h4>Call Us</h4><p>0000-123-456789</p></div>
+          </div>
+          <div class="info-card">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+            <div><h4>Email</h4><p>mail@example.com</p></div>
+          </div>
+          <div class="info-card">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div><h4>Opening Hours</h4><p>Monday – Saturday · 9:30 AM – 7:30 PM</p></div>
+          </div>
+        </div>
+        <div class="form-card">
+          <h2 style="font-size:1.6rem;margin-bottom:6px">Send a Message</h2>
+          <p style="color:var(--muted);font-size:.9rem;margin-bottom:24px">We reply within one business day.</p>
+          <form onsubmit="return showToast('Thanks! Your message is on its way to our team.')">
+            <div class="form-row">
+              <div class="field"><label>First Name</label><input type="text" required placeholder="Jamie" /></div>
+              <div class="field"><label>Last Name</label><input type="text" required placeholder="Patel" /></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label>Email</label><input type="email" required placeholder="you@email.com" /></div>
+              <div class="field"><label>Phone</label><input type="tel" placeholder="Optional" /></div>
+            </div>
+            <div class="field"><label>Subject</label>
+              <select><option>General enquiry</option><option>Order support</option><option>Wholesale</option><option>Press</option></select>
+            </div>
+            <div class="field"><label>Message</label><textarea required placeholder="How can we help?"></textarea></div>
+            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Send Message</button>
+          </form>
+        </div>
+      </div>
+      <div class="map-embed">
+        <div class="map-fake"></div>
+        <div class="map-pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== WHOLESALE ====================================================== -->
+<section class="page" id="page-wholesale">
+  <div class="page-hero">
+    <div class="inner">
+      <h1>Wholesale & B2B</h1>
+      <div class="crumbs"><a href="#" data-nav="home">Home</a> / <span>Wholesale</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="b2b-hero">
+        <div>
+          <span class="eyebrow">For kitchens & shelves</span>
+          <h2>Spices by the sack, blends by the barrel</h2>
+          <p>Restaurants, delis, meal-kit companies and private-label brands rely on Saffira for spice that's consistent batch after batch. We mill to your spec, label to your brand, and ship on a schedule that suits your kitchen.</p>
+          <p>Minimum order just 5kg. Volume pricing, NET-30 terms for approved accounts, and a dedicated trade manager on every order.</p>
+          <a href="#" class="btn btn-primary" onclick="document.getElementById('b2bForm').scrollIntoView({behavior:'smooth'});return false;">Request a Quote</a>
+        </div>
+        <div class="about-img spice-img" style="--g:linear-gradient(150deg,#2d6a4f,#1a0a00);aspect-ratio:4/3"><span class="spice-label">Bulk sacks, milled to order</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section cat-band">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Why trade with us</span><h2>Built for Volume, Without Losing the Soul</h2></div>
+      <div class="b2b-feats">
+        <div class="b2b-feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13v10H3zM16 10h4l1 3v4h-5"/><circle cx="6.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg></div><h3>Reliable Supply</h3><p>Forward-contracted harvests mean we hold price and stock even when the market spikes.</p></div>
+        <div class="b2b-feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div><h3>Custom Blending</h3><p>Bring your recipe or build one with our blenders — matched and reproduced to a tenth of a gram.</p></div>
+        <div class="b2b-feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7 9 18l-5-5"/></svg></div><h3>Private Label</h3><p>Your brand on light-proof, retail-ready packaging — from 100-unit runs upward.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Indicative bulk pricing</span><h2>Volume Price List</h2></div>
+      <table class="price-table">
+        <thead><tr><th>Spice</th><th>Grade</th><th>5–25 kg</th><th>25–100 kg</th><th>100 kg +</th></tr></thead>
+        <tbody>
+          <tr><td>Turmeric Powder</td><td>Lakadong, 7% curcumin</td><td>$11.50/kg</td><td>$9.80/kg</td><td>$8.40/kg</td></tr>
+          <tr><td>Black Pepper</td><td>Tellicherry TGEB</td><td>$18.00/kg</td><td>$15.50/kg</td><td>$13.20/kg</td></tr>
+          <tr><td>Green Cardamom</td><td>8mm bold, AGEB</td><td>$42.00/kg</td><td>$37.00/kg</td><td>$32.50/kg</td></tr>
+          <tr><td>Cumin Seeds</td><td>Singapore 99%</td><td>$9.20/kg</td><td>$7.90/kg</td><td>$6.80/kg</td></tr>
+          <tr><td>Garam Masala</td><td>Saffira house blend</td><td>$14.40/kg</td><td>$12.30/kg</td><td>$10.60/kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section cat-band" id="b2bForm">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Let's talk volume</span>
+          <h2 style="font-size:2rem;margin:6px 0">Request Trade Pricing</h2>
+          <p style="color:var(--muted)">Tell us what you need and your trade manager will reply within one business day with a tailored quote and samples.</p>
+          <div class="info-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div><div><h4>Trade Desk</h4><p>0000-123-456789 · option 2</p></div></div>
+          <div class="info-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><h4>Wholesale Email</h4><p>mail@example.com</p></div></div>
+        </div>
+        <div class="form-card">
+          <form onsubmit="return showToast('Quote request received — your trade manager will be in touch within 1 business day.')">
+            <div class="form-row">
+              <div class="field"><label>Company</label><input type="text" required placeholder="Your business" /></div>
+              <div class="field"><label>Contact Name</label><input type="text" required placeholder="Full name" /></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label>Email</label><input type="email" required placeholder="you@business.com" /></div>
+              <div class="field"><label>Phone</label><input type="tel" required placeholder="Phone" /></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label>Spice / Blend</label><input type="text" placeholder="e.g. Garam Masala" /></div>
+              <div class="field"><label>Estimated Volume</label>
+                <select><option>5 – 25 kg / month</option><option>25 – 100 kg / month</option><option>100 – 500 kg / month</option><option>500 kg+ / month</option></select>
+              </div>
+            </div>
+            <div class="field"><label>Notes</label><textarea placeholder="Tell us about packaging, labelling or delivery needs"></textarea></div>
+            <button class="btn btn-dark" type="submit" style="width:100%;justify-content:center">Request Quote</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="mark">
+          <svg width="34" height="34" viewBox="0 0 40 40" fill="none"><path d="M20 3c-5 6-9 11-9 17a9 9 0 0 0 18 0c0-6-4-11-9-17Z" fill="#c04a10"/><path d="M20 9c-3 4-5 7-5 11a5 5 0 0 0 10 0c0-4-2-7-5-11Z" fill="#f5c472"/></svg>
+          <b>Saffira Spice Co.</b>
+        </div>
+        <p>Single-origin spices and masalas, milled fresh to order since 1998. From the farm gate to your kitchen — alive with aroma.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.8 1.5 1.8 1.8 0 3-2.3 3-5 0-2-1.4-3.6-4-3.6a4.5 4.5 0 0 0-4.7 4.5c0 .9.3 1.5.7 2 .2.2.2.3.1.5l-.2.9c-.1.3-.3.4-.6.2-1.2-.5-1.7-1.9-1.7-3.4 0-2.6 2.1-5.6 6.4-5.6 3.4 0 5.7 2.5 5.7 5.1 0 3.5-2 6.2-4.9 6.2-1 0-1.9-.5-2.2-1.1l-.6 2.4c-.2.8-.7 1.7-1 2.3A10 10 0 1 0 12 2Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>About Us</h5>
+        <a href="#" data-nav="about">Our Story</a>
+        <a href="#" data-nav="about">Sourcing</a>
+        <a href="#" data-nav="about">Certifications</a>
+        <a href="#" data-nav="about">The Team</a>
+        <a href="#" data-nav="blog">Journal</a>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <a href="#" data-nav="shop">Shipping & Returns</a>
+        <a href="#" data-nav="contact">Track Order</a>
+        <a href="#" data-nav="contact">FAQ</a>
+        <a href="#" data-nav="contact">Storage Tips</a>
+      </div>
+      <div>
+        <h5>Information</h5>
+        <a href="#" data-nav="shop">Shop All</a>
+        <a href="#" data-nav="wholesale">Wholesale</a>
+        <a href="#" data-nav="shop">Gift Tins</a>
+        <a href="#" data-nav="blog">Recipes</a>
+        <a href="#" data-nav="about">Privacy Policy</a>
+      </div>
+      <div>
+        <h5>Contact Us</h5>
+        <ul class="f-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.5"/></svg> 11244 Niki Lauda 455, New Zealand</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> 0000-123-456789</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg> mail@example.com</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 9:30 AM – 7:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Saffira Spice Co. — All rights reserved. Milled with love.</p>
+      <div class="pay-icons">
+        <span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>PAYPAL</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="overlay" id="overlay"></div>
+
+<!-- mobile nav drawer -->
+<aside class="drawer" id="navDrawer">
+  <div class="drawer-head"><h3>Menu</h3><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="drawer-body">
+    <nav class="drawer-nav">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#" data-nav="shop">Gourmet Foods</a>
+      <a href="#" data-nav="shop">Shop</a>
+      <a href="#" data-nav="shop">Grocery</a>
+      <a href="#" data-nav="shop">Cooking Oil</a>
+      <a href="#" data-nav="shop">Beverages</a>
+      <a href="#" data-nav="about">About Us</a>
+      <a href="#" data-nav="blog">Blog</a>
+      <a href="#" data-nav="wholesale">Wholesale</a>
+      <a href="#" data-nav="contact">Contact</a>
+    </nav>
+  </div>
+</aside>
+
+<!-- cart drawer -->
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head"><h3>Your Cart</h3><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div style="padding:24px;border-top:1px solid var(--line)">
+    <div style="display:flex;justify-content:space-between;margin-bottom:16px;font-family:var(--serif);font-size:1.2rem">
+      <span>Subtotal</span><b id="cartTotal">$0.00</b>
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="showToast('Checkout is a demo — but your spices are virtually on the way!')">Checkout</button>
+  </div>
+</aside>
+
+<!-- search drawer -->
+<aside class="drawer" id="searchDrawer">
+  <div class="drawer-head"><h3>Search</h3><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="drawer-body">
+    <form class="search-form" onsubmit="return showToast('Searching the spice rack...')">
+      <input type="search" placeholder="Search spices, masalas, recipes..." aria-label="Search" autofocus />
+      <button class="btn btn-primary" type="submit">Go</button>
+    </form>
+    <p style="margin-top:20px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--chili);font-weight:700">Popular</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+      <button class="tab" data-nav="shop">Cardamom</button>
+      <button class="tab" data-nav="shop">Garam Masala</button>
+      <button class="tab" data-nav="shop">Turmeric</button>
+      <button class="tab" data-nav="shop">Saffron</button>
+    </div>
+  </div>
+</aside>
+
+<!-- cookie banner -->
+<div class="cookie" id="cookie">
+  <p><b>We use cookies</b> to keep your spice rack stocked and your experience fresh. By browsing Saffira, you agree to our cookie policy.</p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" id="cookieDecline">Decline</button>
+    <button class="cookie-accept" id="cookieAccept">Accept All</button>
+  </div>
+</div>
+
+<!-- back to top -->
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg></button>
+
+<!-- toast -->
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg"></span></div>
+
+<script>
+/* ============ DATA ============ */
+const grad = ['linear-gradient(135deg,#c04a10,#6b1f06)','linear-gradient(135deg,#e9a94b,#a8702c)','linear-gradient(135deg,#2d6a4f,#143a2a)','linear-gradient(135deg,#8a4a22,#3a1c0a)','linear-gradient(135deg,#b88a3e,#6e4a18)','linear-gradient(135deg,#9c3a0c,#4a1604)','linear-gradient(135deg,#5a3410,#2a1505)','linear-gradient(135deg,#a8702c,#5a3410)','linear-gradient(135deg,#d4923a,#8a4a18)'];
+
+const products = [
+  {n:'Green Cardamom Pods',c:'Cardamom',cat:'Dried Seeds',p:18.50,o:22.00,r:5,g:2,badge:'10% Off',d:'Bold 8mm Idukki pods with an intense, resinous sweetness — the soul of chai and biryani.'},
+  {n:'Tellicherry Black Pepper',c:'Black Pepper',cat:'Dried Seeds',p:12.00,o:null,r:5,g:6,badge:'Bestseller',d:'Late-picked Malabar berries, big and pungent with bright citrus heat and a piney finish.'},
+  {n:'Roasted Cumin Seeds',c:'Cumin Seeds',cat:'Dried Seeds',p:8.40,o:null,r:4,g:1,d:'Earthy, warm and nutty — gently roasted to coax out the oils before you even open the jar.'},
+  {n:'Coriander Seeds',c:'Coriander',cat:'Dried Seeds',p:7.20,o:9.00,r:5,g:4,badge:'New',d:'Citrus-floral and lightly sweet; crush fresh for the backbone of any spice blend.'},
+  {n:'Yellow Mustard Seeds',c:'Mustard Seeds',cat:'Dried Seeds',p:6.50,o:null,r:4,g:8,d:'Sharp and tangy, they pop and mellow in hot oil for South Indian tempering.'},
+  {n:'Whole Nutmeg',c:'Nutmeg',cat:'Dried Seeds',p:14.00,o:null,r:5,g:3,d:'Grate fresh for a sweet, woody warmth that powdered nutmeg can only dream of.'},
+  {n:'Saffira Garam Masala',c:'Garam Masalas',cat:'Spicy Masalas',p:13.40,o:16.00,r:5,g:0,badge:'House Blend',d:'Sixteen spices roasted and balanced in-house — warming, deep and never harsh.'},
+  {n:'Fiery Vindaloo Masala',c:'Spicy Masalas',cat:'Spicy Masalas',p:11.90,o:null,r:5,g:5,badge:'Hot',d:'Kashmiri chili, garlic and vinegar notes for that unmistakable Goan punch.'},
+  {n:'Herbs & Garden Masala',c:'Herbs Masalas',cat:'Spicy Masalas',p:10.50,o:null,r:4,g:2,d:'A green, herbaceous blend of fenugreek, mint and curry leaf for lighter dishes.'},
+  {n:'Lakadong Turmeric',c:'Turmeric Powder',cat:'Spicy Masalas',p:11.50,o:null,r:5,g:1,badge:'7% Curcumin',d:'Meghalaya turmeric prized worldwide for its glowing colour and high curcumin.'},
+  {n:'Tandoori Masala',c:'Spicy Masalas',cat:'Spicy Masalas',p:12.20,o:14.50,r:5,g:5,d:'Smoky, tangy and crimson — the rub that turns chicken and paneer into a feast.'},
+  {n:'Ceylon Cinnamon',c:'Cinnamon',cat:'Dried Seeds',p:9.80,o:null,r:5,g:3,badge:'True Cinnamon',d:'Delicate, paper-thin quills with a soft, sweet warmth — never the harsh cassia kind.'},
+  {n:'Whole Cloves',c:'Clove',cat:'Dried Seeds',p:10.20,o:null,r:4,g:6,d:'Hand-picked Pemba cloves, intensely aromatic with sweet, almost medicinal depth.'},
+  {n:'Kashmiri Chili Powder',c:'Spicy Masalas',cat:'Spicy Masalas',p:9.40,o:null,r:5,g:0,d:'Deep red, mild heat and huge colour — the secret to restaurant-style curries.'},
+  {n:'Cold-Pressed Mustard Oil',c:'Cooking Oils',cat:'Spicy Masalas',p:15.00,o:null,r:4,g:8,d:'Pungent, golden and cold-pressed — the traditional fat for pickles and Bengali cooking.'},
+  {n:'Masala Chai Blend',c:'Beverages',cat:'Spicy Masalas',p:13.00,o:15.00,r:5,g:7,badge:'Café Favourite',d:'Cardamom, ginger, clove and pepper, ready to simmer into a fragrant cup.'}
+];
+
+const premium = [
+  {n:'Persian Saffron Threads',c:'Saffron',p:48.00,o:null,r:5,g:1,badge:'Grade A+',d:'All-red Sargol stigmas, hand-sorted — a few threads gild rice, desserts and broth with sunset colour.'},
+  {n:'Wild Bourbon Vanilla',c:'Beverages',p:39.00,o:null,r:5,g:3,badge:'Single Origin',d:'Plump Madagascan pods, oily and fragrant with deep caramel-floral sweetness.'},
+  {n:'Black Cardamom (Badi Elaichi)',c:'Cardamom',p:21.50,o:26.00,r:5,g:6,badge:'Smoked',d:'Smoke-dried pods with a bold, camphor-cool warmth for hearty meat curries and pulao.'},
+  {n:'Aleppo-Style Pepper Flakes',c:'Spicy Masalas',p:16.80,o:null,r:5,g:5,badge:'Limited',d:'Sun-dried, oil-slicked flakes with a fruity, sun-warmed heat that builds slowly.'}
+];
+
+const team = [
+  {n:'Anaya Rao',role:'Founder & Head Buyer',g:2,d:'Started Saffira at a single market stall and still tastes every harvest before it ships.'},
+  {n:'Idris Bello',role:'Master Blender',g:5,d:'Thirty years of balancing masalas by nose, gram by gram, until each blend sings.'},
+  {n:'Mei Lin Cho',role:'Quality & Sourcing',g:3,d:'Travels to origin farms each season to grade lots and shake every grower\'s hand.'},
+  {n:'Tomas Vega',role:'Roast Master',g:1,d:'Coaxes the oils out of every seed with a roast curve dialled in to the tenth of a degree.'}
+];
+
+const blogs = [
+  {t:'How to Bloom Your Spices Like a Pro',a:'Anaya Rao',date:['12','Jun'],cm:18,g:0,d:'Thirty seconds in hot oil unlocks aromas a cold pan never will. Here\'s the technique.'},
+  {t:'Cardamom: The Queen of Spices, Explained',a:'Mei Lin Cho',date:['08','Jun'],cm:11,g:2,d:'Green vs black, whole vs ground — everything you need to use cardamom with confidence.'},
+  {t:'A Weeknight Garam Masala Dal',a:'Idris Bello',date:['03','Jun'],cm:24,g:5,d:'Pantry lentils transformed in 30 minutes with a fresh, fragrant homemade tempering.'},
+  {t:'Turmeric: Beyond the Golden Latte',a:'Tomas Vega',date:['28','May'],cm:9,g:1,d:'Why curcumin content matters and how to cook turmeric so your body actually uses it.'},
+  {t:'Building Your First Spice Rack',a:'Anaya Rao',date:['21','May'],cm:15,g:4,d:'The ten whole spices that will carry ninety percent of the world\'s great dishes.'},
+  {t:'The Right Way to Store Whole Spices',a:'Mei Lin Cho',date:['16','May'],cm:7,g:6,d:'Light, heat and air are the enemies. Simple habits to keep your spices alive for longer.'}
+];
+
+const categories = ['Spicy Masalas','Herbs Masalas','Mustard Seeds','Garam Masalas','Turmeric Powder','Black Pepper','Cumin Seeds','Cardamom','Coriander','Cinnamon','Clove','Nutmeg','Dried Seeds','Cooking Oils','Beverages'];
+
+/* ============ RENDER HELPERS ============ */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const stars = r => '★★★★★'.slice(0,r) + '☆☆☆☆☆'.slice(0,5-r);
+
+function productCard(p){
+  return `<article class="card">
+    <div class="card-img spice-img" style="--g:${grad[p.g]}">
+      ${p.badge?`<span class="card-badge">${p.badge}</span>`:''}
+      <button class="card-fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg></button>
+      <span class="spice-label">${p.c}</span>
+    </div>
+    <div class="card-body">
+      <span class="card-cat">${p.c}</span>
+      <h3>${p.n}</h3>
+      <div class="stars">${stars(p.r)}</div>
+      <p class="card-desc">${p.d}</p>
+      <div class="card-foot">
+        <span class="price">$${p.p.toFixed(2)}${p.o?`<s>$${p.o.toFixed(2)}</s>`:''}</span>
+        <button class="add-btn" aria-label="Add to cart" onclick='addToCart(${JSON.stringify(p.n)},${p.p},${p.g})'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+      </div>
+    </div>
+  </article>`;
+}
+
+function render(){
+  $('#grid-seeds').innerHTML = products.filter(p=>p.cat==='Dried Seeds').slice(0,4).map(productCard).join('');
+  $('#grid-masalas').innerHTML = products.filter(p=>p.cat==='Spicy Masalas').slice(0,4).map(productCard).join('');
+  $('#grid-premium').innerHTML = premium.map(productCard).join('');
+  $('#shopGrid').innerHTML = products.map(productCard).join('');
+  $('#shopCount').textContent = `Showing all ${products.length} products`;
+
+  // team (both pages)
+  const teamHTML = team.map(t=>`<div class="team-card">
+    <div class="team-photo spice-img" style="--g:${grad[t.g]}"></div>
+    <h3>${t.n}</h3><div class="role">${t.role}</div><p>${t.d}</p>
+    <div class="team-social">
+      <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.8 3.6A11.3 11.3 0 0 1 3.8 4.5a4 4 0 0 0 1.2 5.3c-.6 0-1.2-.2-1.8-.5a4 4 0 0 0 3.2 3.9c-.5.2-1.1.2-1.7.1a4 4 0 0 0 3.7 2.8A8 8 0 0 1 2 18a11.3 11.3 0 0 0 17.4-9.5c.8-.6 1.5-1.3 2-2.1Z"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9V9Z"/></svg></a>
+      <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
+    </div></div>`).join('');
+  $('#teamGrid').innerHTML = teamHTML;
+  $('#teamGrid2').innerHTML = teamHTML;
+
+  // blog carousel
+  const blogCard = b=>`<article class="blog-card">
+    <div class="blog-img spice-img" style="--g:${grad[b.g]}"><div class="blog-date"><b>${b.date[0]}</b><span>${b.date[1]}</span></div></div>
+    <div class="blog-body">
+      <div class="blog-meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg> ${b.a}</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg> ${b.cm}</span>
+      </div>
+      <h3>${b.t}</h3><p>${b.d}</p>
+      <a href="#" class="read-more">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div></article>`;
+  $('#blogTrack').innerHTML = blogs.map(blogCard).join('');
+  $('#blogPageGrid').innerHTML = blogs.map(blogCard).join('');
+
+  // shop category filter
+  $('#catFilter').innerHTML = '<button class="on">All Spices <span>'+products.length+'</span></button>' +
+    categories.map(c=>{const n=products.filter(p=>p.c===c||p.cat===c).length;return `<button>${c} <span>${n}</span></button>`}).join('');
+}
+render();
+
+/* ============ CART ============ */
+let cart = [
+  {n:'Saffira Garam Masala',p:13.40,g:0,q:1},
+  {n:'Tellicherry Black Pepper',p:12.00,g:6,q:1},
+  {n:'Green Cardamom Pods',p:18.50,g:2,q:1}
+];
+function renderCart(){
+  $('#cartCount').textContent = cart.reduce((s,i)=>s+i.q,0);
+  if(!cart.length){ $('#cartBody').innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0">Your cart is empty — go fill it with flavour.</p>'; }
+  else{
+    $('#cartBody').innerHTML = cart.map((i,ix)=>`<div class="cart-item">
+      <div class="ci-img spice-img" style="--g:${grad[i.g]}"></div>
+      <div><h4>${i.n}</h4><small>Qty ${i.q} × $${i.p.toFixed(2)}</small></div>
+      <span class="ci-price">$${(i.p*i.q).toFixed(2)}</span>
+      <button class="icon-btn" style="width:30px;height:30px" onclick="removeItem(${ix})" aria-label="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>`).join('');
+  }
+  $('#cartTotal').textContent = '$'+cart.reduce((s,i)=>s+i.p*i.q,0).toFixed(2);
+}
+function addToCart(n,p,g){
+  const ex = cart.find(i=>i.n===n);
+  if(ex) ex.q++; else cart.push({n,p,g,q:1});
+  renderCart(); showToast(n+' added to cart');
+}
+function removeItem(ix){ cart.splice(ix,1); renderCart(); }
+renderCart();
+
+/* ============ NAVIGATION (SPA) ============ */
+function go(page){
+  $$('.page').forEach(p=>p.classList.remove('active'));
+  const target = $('#page-'+page) || $('#page-home');
+  target.classList.add('active');
+  $$('.nav-link').forEach(l=>l.classList.toggle('active', l.dataset.nav===page));
+  window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+  closeAll();
+}
+document.addEventListener('click', e=>{
+  const nav = e.target.closest('[data-nav]');
+  if(nav){ e.preventDefault(); go(nav.dataset.nav); }
+});
+
+/* ============ HERO CAROUSEL ============ */
+let hi = 0; const slides = $$('.slide'); const dots = $('#heroDots');
+slides.forEach((_,i)=>{const b=document.createElement('button');b.className=i?'':'on';b.onclick=()=>heroGo(i);dots.appendChild(b);});
+function heroGo(i){
+  hi = (i+slides.length)%slides.length;
+  slides.forEach((s,x)=>s.classList.toggle('on',x===hi));
+  [...dots.children].forEach((d,x)=>d.classList.toggle('on',x===hi));
+}
+$('#heroNext').onclick=()=>heroGo(hi+1);
+$('#heroPrev').onclick=()=>heroGo(hi-1);
+let heroTimer = setInterval(()=>heroGo(hi+1),6000);
+$('.hero').addEventListener('mouseenter',()=>clearInterval(heroTimer));
+$('.hero').addEventListener('mouseleave',()=>heroTimer=setInterval(()=>heroGo(hi+1),6000));
+
+/* ============ TABS ============ */
+$$('#bestTabs .tab').forEach(t=>t.onclick=()=>{
+  $$('#bestTabs .tab').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  $$('.tab-panel').forEach(p=>p.classList.remove('on'));
+  $('#panel-'+t.dataset.panel).classList.add('on');
+});
+
+/* ============ BLOG CAROUSEL ============ */
+let bi = 0; const track = $('#blogTrack');
+function blogStep(){ return track.children[0] ? track.children[0].offsetWidth + 26 : 0; }
+function blogVisible(){ return window.innerWidth<560?1:window.innerWidth<880?2:3; }
+function blogGo(dir){
+  const max = blogs.length - blogVisible();
+  bi = Math.max(0, Math.min(max, bi+dir));
+  track.style.transform = `translateX(-${bi*blogStep()}px)`;
+}
+$('#blogNext').onclick=()=>blogGo(1);
+$('#blogPrev').onclick=()=>blogGo(-1);
+window.addEventListener('resize',()=>{bi=0;track.style.transform='translateX(0)';});
+
+/* ============ DRAWERS ============ */
+const overlay = $('#overlay');
+function openDrawer(id){ closeAll(); $(id).classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeAll(){ $$('.drawer').forEach(d=>d.classList.remove('open')); overlay.classList.remove('open'); document.body.style.overflow=''; }
+$('#burger').onclick=()=>openDrawer('#navDrawer');
+$('#openCart').onclick=()=>{renderCart();openDrawer('#cartDrawer');};
+$('#openSearch').onclick=()=>openDrawer('#searchDrawer');
+overlay.onclick=closeAll;
+$$('[data-close]').forEach(b=>b.onclick=closeAll);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
+
+/* ============ HEADER SHRINK + BACK TO TOP ============ */
+const header = $('#header'); const toTop = $('#toTop');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('shrink', window.scrollY>20);
+  toTop.classList.toggle('show', window.scrollY>500);
+});
+toTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+/* ============ COOKIE ============ */
+const cookie = $('#cookie');
+if(localStorage.getItem('saffira-cookie')) cookie.classList.add('hide');
+$('#cookieAccept').onclick=()=>{localStorage.setItem('saffira-cookie','1');cookie.classList.add('hide');};
+$('#cookieDecline').onclick=()=>{localStorage.setItem('saffira-cookie','1');cookie.classList.add('hide');};
+
+/* ============ TOAST ============ */
+let toastTimer;
+function showToast(msg){
+  $('#toastMsg').textContent = msg;
+  $('#toast').classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>$('#toast').classList.remove('show'),3200);
+  return false;
+}
+</script>
+</body>
+</html>
